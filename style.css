@@ -1,0 +1,95 @@
+:root {
+  --bg-green: #004d2c; /* A deep, professional forest green */
+  --accent-green: #00703c; /* Algonquin's signature green for buttons */
+  --white: #ffffff;
+  --glass-effect: rgba(255, 255, 255, 0.1);
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--bg-green);
+  color: var(--white); /* Sets all text to white globally */
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.container {
+  text-align: center;
+  width: 90%;
+  max-width: 400px;
+  padding: 20px;
+}
+
+.profile-img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--white); /* White border to contrast the green bg */
+  margin-bottom: 15px;
+}
+
+h1 {
+  font-size: 1.8rem;
+  margin-bottom: 5px;
+}
+
+.subtitle {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.8); /* Slightly softer white for the subtitle */
+  margin-bottom: 30px;
+}
+
+/* Vertically Stacked Buttons */
+.links-section {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.btn {
+  background-color: var(--glass-effect); /* Subtle glass look */
+  color: var(--white);
+  text-decoration: none;
+  padding: 16px 20px;
+  border: 1px solid var(--white);
+  border-radius: 12px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  background-color: var(--white);
+  color: var(--bg-green); /* Flips colors on hover for a high-end feel */
+  transform: scale(1.02);
+}
+
+.social-footer {
+  margin-top: 40px;
+}
+
+.social-icons {
+  font-size: 1.8rem;
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  margin-bottom: 15px;
+}
+
+.social-icons a {
+  color: var(--white);
+  transition: transform 0.3s ease;
+}
+
+.social-icons a:hover {
+  transform: translateY(-3px);
+  color: rgba(255, 255, 255, 0.7);
+}
+
+footer p {
+  font-size: 0.8rem;
+  opacity: 0.6;
+}
