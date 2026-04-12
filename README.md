@@ -1,4 +1,4 @@
-#Lorena Arroyo Perez - My bio site
+#Lorena Arroyo Perez - My Link-in-bio site
 
 Welcome to my GitHub Pages portfolio.   
 
