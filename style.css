@@ -1,14 +1,25 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700&display=swap");
+
 :root {
-  --bg-green: #c7f7e2; /* A deep, professional forest green, for demo change to #60caa5 or #eb6660*/
-  --accent-green: #bcf1ed; /* Algonquin's signature green for buttons , or change it to ##f43d33*/
-  --black: #000000;
-  --glass-effect: rgba(255, 255, 255, 0.1);
+  /* The "Amplified" Palette */
+  --aqua-bright: #00d2be; /* The vibrant color from your favorite hover state */
+  --white: #ffffff; /* Your new primary text color */
+  --aqua-deep: #002b28; /* A dark, professional teal for the background */
+  --aqua-accent: #004d47; /* A middle-tone for container depth */
+
+  /* Typography */
+  --font-main: "Outfit", sans-serif;
 }
 
 body {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  background: linear-gradient(135deg, #c7f7e2 0%, #bcf1ed 100%);
-  color: var(--black); /* Sets all text to black globally */
+  font-family: var(--font-main);
+  /* Deep, immersive background to make white text pop */
+  background: radial-gradient(
+    circle at center,
+    var(--aqua-accent) 0%,
+    var(--aqua-deep) 100%
+  );
+  color: var(--white); /* Removes black globally */
   margin: 0;
   display: flex;
   justify-content: center;
@@ -19,112 +30,121 @@ body {
 .container {
   text-align: center;
   width: 90%;
-  max-width: 400px;
-  padding: 20px;
+  max-width: 440px;
+  padding: 40px 20px;
+  /* Soft glass effect that works with the deep background */
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(10px);
 }
 
-.hero-figure {
-  margin: 0 0 1rem;
-}
-
+/* Maintaining your exact portrait dimensions */
 .profile-img {
   display: block;
   width: min(100%, 280px);
   aspect-ratio: 1;
   height: 400px;
   margin: 0 auto;
-  border-radius: 10%;
+  border-radius: 24px;
   object-fit: cover;
-  border: 3px solid var(--black);
+  /* Glow effect instead of a traditional shadow */
+  box-shadow: 0 20px 40px rgba(0, 210, 190, 0.2);
 }
 
 .photo-caption {
-  margin-top: 0.65rem;
-  font-size: 0.85rem;
-  color: rgba(0, 0, 0, 0.85);
-  line-height: 1.4;
-  max-width: 280px;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 1.5rem auto;
+  font-size: 0.9rem;
+  font-weight: 300;
+  color: var(--white);
+  opacity: 0.8;
+  line-height: 1.6;
 }
 
-.photo-caption strong {
+/* Typography using White as requested */
+h1,
+h2,
+h3 {
+  color: var(--white);
   font-weight: 700;
-  color: var(--black);
+  letter-spacing: -0.02em;
 }
 
 h1 {
-  font-size: 1.8rem;
-  margin-bottom: 5px;
+  font-size: clamp(2.2rem, 6vw, 2.8rem);
+  margin-bottom: 8px;
 }
 
 .subtitle {
-  font-size: 1rem;
-  color: rgba(0, 0, 0, 0.8); /* Slightly softer black for the subtitle */
-  margin-bottom: 30px;
+  font-size: 1.1rem;
+  color: var(--aqua-bright); /* Aqua acts as the "highlight" color now */
+  font-weight: 500;
+  margin-bottom: 40px;
 }
 
-/* Centered, vertically stacked navigation */
+/* Buttons: Defaulting to your "Amplified" style */
 .links-section {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 15px;
+  gap: 16px;
   width: 100%;
 }
 
 .btn {
   box-sizing: border-box;
   width: min(100%, 280px);
-  max-width: 22rem;
   text-align: center;
-  background-color: var(--glass-effect); /* Subtle glass look */
-  color: var(--black);
   text-decoration: none;
-  padding: 16px 20px;
-  border: 1px solid var(--black);
-  border-radius: 12px;
-  font-weight: 600;
-  transition: all 0.3s ease;
+  padding: 18px 20px;
+  border-radius: 16px;
+  font-weight: 700;
+  font-size: 1.05rem;
+
+  /* THIS IS YOUR AMPLIFIED STATE AS THE NEW DEFAULT */
+  background-color: var(--aqua-bright);
+  color: var(--white);
+  transform: translateY(0);
+  box-shadow: 0 10px 30px rgba(0, 210, 190, 0.3);
+  border: 1px solid transparent;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-.btn:focus-visible {
-  outline: 3px solid var(--black);
-  outline-offset: 3px;
-}
-
+/* Hover now adds extra "pop" and scale */
 .btn:hover {
-  background-color: var(--black);
-  color: var(--bg-green); /* Flips colors on hover while keeping contrast */
-  transform: scale(1.02);
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 20px 50px rgba(0, 210, 190, 0.5);
+  filter: brightness(1.1); /* Subtle glow on hover */
 }
 
-.social-footer {
-  margin-top: 40px;
+.btn:active {
+  transform: scale(0.98);
 }
 
+/* Social Icons */
 .social-icons {
-  font-size: 1.8rem;
+  margin-top: 45px;
   display: flex;
   justify-content: center;
   gap: 25px;
-  margin-bottom: 15px;
 }
 
 .social-icons a {
-  color: var(--black);
-  transition: transform 0.3s ease;
+  color: var(--white);
+  font-size: 1.8rem;
+  opacity: 0.7;
+  transition: all 0.3s ease;
 }
 
 .social-icons a:hover {
+  color: var(--aqua-bright);
+  opacity: 1;
   transform: translateY(-3px);
-  color: rgba(0, 0, 0, 0.7);
 }
 
 footer p {
-  font-size: 0.8rem;
-  opacity: 0.6;
+  margin-top: 40px;
+  font-size: 0.7rem;
+  color: var(--white);
+  opacity: 0.4;
+  text-transform: uppercase;
+  letter-spacing: 2px;
 }
-
-
-
