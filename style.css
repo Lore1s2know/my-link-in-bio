@@ -7,7 +7,7 @@
 
 body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  background-color: var(--bg-green);
+  background: linear-gradient(135deg, #c7f7e2 0%, #bcf1ed 100%);
   color: var(--black); /* Sets all text to black globally */
   margin: 0;
   display: flex;
@@ -125,5 +125,6 @@ footer p {
   font-size: 0.8rem;
   opacity: 0.6;
 }
+
 
 
